@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topCon"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomCon"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="@id/topCon"
+            app:layout_constraintLeft_toLeftOf="@id/topCon"
+            app:layout_constraintRight_toRightOf="@id/topCon"
+            app:layout_constraintBottom_toBottomOf="@id/topCon">
+
+            <ImageView
+                android:id="@+id/imageMusic"
+                android:padding="40dp"
+                app:tint="@color/music"
+                android:background="@color/colorAccent"
+                android:src="@drawable/music_1_svgrepo_com"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textMusicName"
+            app:layout_constraintTop_toBottomOf="@id/card"
+            app:layout_constraintLeft_toLeftOf="@id/topCon"
+            app:layout_constraintRight_toRightOf="@id/topCon"
+            android:gravity="center"
+            android:text="Sample music name"
+            android:textSize="22sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:text="Sample artist name"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="@id/topCon"
+            app:layout_constraintLeft_toLeftOf="@id/topCon"
+            app:layout_constraintTop_toBottomOf="@id/textMusicName"
+            android:id="@+id/textArtistname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomCon"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topCon"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <SeekBar
+            android:layout_marginBottom="50dp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="0.3"
+            android:id="@+id/seekBar"
+            app:layout_constraintTop_toTopOf="@id/bottomCon"
+            app:layout_constraintRight_toRightOf="@id/bottomCon"
+            app:layout_constraintLeft_toLeftOf="@id/bottomCon"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@id/buttonManage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/currentTime"
+            app:layout_constraintTop_toBottomOf="@id/seekBar"
+            app:layout_constraintLeft_toLeftOf="@id/seekBar"
+            android:layout_marginLeft="16dp"
+            android:text="0:00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/totalTime"
+            android:text="0:00"
+            app:layout_constraintTop_toBottomOf="@id/seekBar"
+            app:layout_constraintRight_toRightOf="@id/seekBar"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+        <ImageView
+            android:id="@+id/buttonRandom"
+            app:layout_constraintLeft_toLeftOf="@id/bottomCon"
+            app:layout_constraintTop_toTopOf="@id/buttonPrev"
+            app:layout_constraintBottom_toBottomOf="@id/buttonPrev"
+            app:layout_constraintRight_toLeftOf="@id/buttonPrev"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+
+
+        <ImageView
+            android:rotation="180"
+            android:padding="7dp"
+            android:src="@drawable/skip_next_svgrepo_com"
+            android:id="@+id/buttonPrev"
+            app:layout_constraintRight_toLeftOf="@id/buttonManage"
+            app:layout_constraintLeft_toRightOf="@id/buttonRandom"
+            app:layout_constraintTop_toTopOf="@id/buttonManage"
+            app:layout_constraintBottom_toBottomOf="@id/buttonManage"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+
+        <ImageView
+            android:src="@drawable/play_svgrepo_com"
+            android:id="@+id/buttonManage"
+            app:layout_constraintLeft_toRightOf="@id/buttonPrev"
+            app:layout_constraintTop_toBottomOf="@id/seekBar"
+            app:layout_constraintBottom_toBottomOf="@id/bottomCon"
+            app:layout_constraintRight_toLeftOf="@id/buttonNext"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+
+        <ImageView
+            android:padding="7dp"
+            android:src="@drawable/skip_next_svgrepo_com"
+            android:id="@+id/buttonNext"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintRight_toLeftOf="@id/buttonRepeat"
+            app:layout_constraintTop_toTopOf="@id/buttonManage"
+            app:layout_constraintBottom_toBottomOf="@id/buttonManage"
+            app:layout_constraintLeft_toRightOf="@id/buttonManage"/>
+
+        <ImageView
+            android:id="@+id/buttonRepeat"
+            app:layout_constraintRight_toRightOf="@id/bottomCon"
+            app:layout_constraintTop_toTopOf="@id/buttonNext"
+            app:layout_constraintBottom_toBottomOf="@id/buttonNext"
+            app:layout_constraintLeft_toRightOf="@id/buttonNext"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+   
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
